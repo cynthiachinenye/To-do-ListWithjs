@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1>To-Do-List</h1>
+    <div class="container">
+
+       <input type="text" id="task" name="task" placeholder="Add a task">
+       <button type="submit" id="btn">Add Task</button> 
+       <hr/>
+       <label for="list">Task List</label>
+       <input type="text" name="filter" placeholder="Filter" id="filter">
+       <ul id="taskList"></ul>
+       <button type="submit" id="clear">Clear Task</button>
+        
+    </div>
+    <script src="main.js">
+
+        /*     Declare the variables inthe DOM */
+
+        
+
+//         // Declaring a variable and assigining to the DOM
+//         const taskInput = document.getElementById("task");
+//         const addBtn = document.getElementById("btn")
+//         const filter = document.getElementById("filter");
+//         const taskList = document.getElementById("taskList");
+//         const removeTask = document.getElementById("clear");
+
+//         addBtn.addEventListener('click', function(e){
+
+//             e.preventDefault();
+//          const task = taskInput.value.trim();
+
+//             if(task === ""){
+//                 alert("Task is required to be added");
+//                 return;
+//             }
+
+//             addTaskToDOM(task); // render in a separate function
+//             saveToLocalStorage(task); //save it
+
+//             taskInput.value = "";
+
+           
+             
+
+
+//              });
+// //            Add task to the dom
+//              function addTaskToDOM(task){
+
+//             const list = document.createElement("li");
+//             list.textContent =task;
+//             // const tasks = document.createTextNode(taskInput.value);
+//             // list.appendChild(task);
+//             taskList.appendChild(list);
+//             list.style.backgroundColor = "#583da1";
+//             list.style.padding = '20px';
+//             taskInput.value = ""; //clear input after adding.
+
+
+//                  // deleting a single task
+
+//                 const deleteTask = document.createElement("span");
+//                 deleteTask.innerHTML ='<i class="fa-solid fa-delete-left delete-icon"></i>';
+//                 deleteTask.style.cursor ="pointer";
+                
+
+//                 list.appendChild(deleteTask);
+
+//              }
+
+//              taskList.addEventListener('click',function(e){
+//                 if(e.target.classList.contains('delete-icon')){
+//                     const li = e.target.closest("li");
+//                     const taskToDelete = li.querySelector("span").textContent.trim();
+//                     li.remove();
+//                     deleteFromLocalStorage(taskToDelete);
+//                 // e.target.parentElement.parentElement.remove();
+//                 }
+//              })
+
+//               function saveToLocalStorage(task){
+//                     let tasks = JSON.parse(localStorage.getItem("tasks"))||[];
+//                     tasks.push(task);
+//                     localStorage.setItem("tasks",JSON.stringify(tasks));
+                    
+//                 }
+                 
+//              function deleteFromLocalStorage(task){
+//                 let tasks = JSON.parse(localStorage.getItem("task"))||[];
+//                 tasks = tasks.filter(t => t !== task);
+//                 localstorage.setItem("task", JSON.stringify(tasks))
+//              }
+             
+
+//              //filter tasks
+//              filter.addEventListener('keyup', function(){
+//                 const typed = filter.value.toLowerCase();
+//                 const searchTask = document.querySelectorAll("#taskList li");
+
+//                 searchTask.forEach(function(tasklisted){
+//                     const listTask = tasklisted.textContent.toLowerCase();
+
+//                     if(listTask.includes(typed)){
+//                         tasklisted.style.display ="list-item";
+//                     }
+//                     else{
+//                         tasklisted.style.display="none";
+//                     }
+//                 })
+
+//                 }) 
+//                 //clear all task
+
+//                 removeTask.addEventListener('click',function(){
+//                     taskList.innerHTML="";
+//                     localStorage.removeItem("tasks")
+//                 })
+             
+
+
+//              document.addEventListener('DOMContentLoaded', function(){
+//                 let task = JSON.parse(localStorage.getItem("tasks"))||[];
+//                 task.forEach(function(task){
+//                     addTaskToDOM(task);
+//                 })
+//              })
+   
+                    // const list = document.createElement("li");
+                    // const text = document.createTextNode(taskInput.value);
+                    // taskList.appendChild(list);
+
+                    // removeTask.addEventListener('click', function(){
+                    //    tasklist.remove();
+                    // })
+
+                    // filter.addEventListener('keyup', function(){
+
+                    //     const searchTask = document.querySelectorAll("li");
+                    //     searchTask.forEach(function(taskListed){
+
+                    //         const listTask = taskListed.textContent.toLowerCase();
+
+                    //         if(listTask.includes(typed)){
+                    //             taskListed.style.display="list-item"; //show
+                    //         }
+                    //         else{
+                    //             taskListed.style.display="none"; //hide
+                    //         }
+                    //     })
+                    // })
+
+
+        
+        
+        
+        
+               
+    </script>
+</body>
+</html>
