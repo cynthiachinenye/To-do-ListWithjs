@@ -50,9 +50,9 @@ taskList.addEventListener('click', function(e){
 
     if(e.target.classList.contains('delete-icon')){
         const li =e.target.closest("li");
-        const taskToDelete = li.querySelector('span').textContent.trim();
+        const taskToDelete = li.firstChild.textContent.trim();
         li.remove();
-        localStorage(taskToDelete);
+        deleteFromLocalStorage(taskToDelete);
 
     }
 
@@ -83,9 +83,9 @@ function saveTaskToLocalStorage(task){
 }
 
 function deleteFromLocalStorage(task) {
-    let tasks = JSON.parse(localStorage.getItem("task"))|| [];
+    let tasks = JSON.parse(localStorage.getItem("tasks"))|| [];
     tasks = tasks.filter(t=>t!==task);
-    localStorage.setItem("task",JSON.stringify(tasks));
+    localStorage.setItem("tasks",JSON.stringify(tasks));
     
 }
 clearBtn.addEventListener('click', function(){
@@ -99,7 +99,7 @@ clearBtn.addEventListener('click', function(){
 document.addEventListener('DOMContentLoaded', function(){
     let task = JSON.parse(localStorage.getItem('tasks'));
     task.forEach(function (task){
-addTaskToDom();
+addTaskToDom(task);
     })
 })
 
